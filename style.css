@@ -1,305 +1,257 @@
-/* =========================================================
-   style.css  ―― サイト全体の見た目を決めるファイル
-   👤 担当：デザイン担当（　　　　　　　　）さん
+/* =========================
+   全体
+========================= */
 
-   このファイルを編集すると、サイト全体の色や形が変わります。
-   まずは下の「テーマカラー」の色コードを変えてみよう。
-   色コードは #RRGGBB の形。https://www.color-sample.com/ などで探せます。
-   ========================================================= */
-
-/* ▼ テーマカラー（ここを変えると全ページの色が一気に変わる）✏️ */
-:root {
-  --color-bg:         #fafdff;  /* 背景：ほんのり爽やかな水色ベースの白 */
-  --color-green:      #7cb342;  /* メイン：フレッシュで明るい黄緑（葉っぱの色） */
-  --color-green-dark: #388e3c;  /* 濃い緑：引き締まった濃い野菜の緑（見出し） */
-  --color-accent:     #ff9100;  /* アクセント：ジューシーなみかんオレンジ */
-  --color-ink:        #2c3e50;  /* 文字：真っ黒にせず、今っぽい深みのあるネイビー黒 */
-  --color-card:       #ffffff;  /* カード：白 */
-  --radius:           18px;     
-  --shadow:           0 10px 30px rgba(56, 142, 60, 0.06); 
-  --transition:       all 0.3s ease; 
-}
-/* ▼ 全体設定（Google Fonts の Zen Maru Gothic を使用） */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: "Zen Maru Gothic", sans-serif;
-  background-color: var(--color-bg);
-  color: var(--color-ink);
-  line-height: 1.8;
-  /* 背景のドット模様 */
-  background-image: radial-gradient(rgba(92,138,58,0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
-  -webkit-font-smoothing: antialiased; /* 文字をクッキリ滑らかに */
+body{
+  font-family:'Zen Maru Gothic', sans-serif;
+  background:#f5f2e8;
+  color:#333;
+  line-height:1.7;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-a {
-  color: var(--color-green-dark);
-  transition: var(--transition);
+img{
+  width:100%;
+  display:block;
 }
 
-/* =========================================================
-   ヘッダー（全ページ共通の上の帯）
-   ========================================================= */
-.site-header {
-  background-color: var(--color-green);
-  color: #fff;
-  padding: 24px; /* 上下を少し広げてゆったりと */
-  text-align: center;
+/* =========================
+   ヘッダー
+========================= */
+
+.site-header{
+  background:linear-gradient(90deg,#3d7a2f,#6aa84f);
+  color:white;
+  text-align:center;
+  padding:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 
-.site-header .farm-name {
-  font-size: 1.6rem; /* 少し大きく */
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.farm-name{
+  font-size:2rem;
+  font-weight:700;
 }
 
-.site-header .farm-sub {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-top: 4px;
+.farm-sub{
+  margin-top:8px;
+  font-size:1rem;
 }
 
-/* 中身を中央にそろえる共通の箱 */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px; /* スマホでの端の余白を少し確保 */
+/* =========================
+   ヒーロー
+========================= */
+
+.hero{
+  position:relative;
+  height:420px;
+  overflow:hidden;
 }
 
-/* =========================================================
-   トップページの「ヒーロー」（一番上の大きな写真）
-   ========================================================= */
-.hero {
-  position: relative;
-  margin: 32px auto;
-  max-width: 960px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.hero img{
+  height:100%;
+  object-fit:cover;
+  filter:brightness(70%);
 }
 
-/* 画像の上にうっすら暗いグラデーションを重ねて文字を読みやすくする */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.5));
-  pointer-events: none;
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:white;
+  width:90%;
 }
 
-.hero img {
-  width: 100%;
-  height: 360px; /* 少し高くしてダイナミックに */
-  object-fit: cover;
+.hero-text h1{
+  font-size:3rem;
+  margin-bottom:15px;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.5);
 }
 
-.hero .hero-text {
-  position: absolute;
-  left: 32px;
-  bottom: 32px;
-  color: #fff;
-  z-index: 1; /* グラデーションより手前に */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+.hero-text p{
+  font-size:1.2rem;
+  background:rgba(0,0,0,0.4);
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:999px;
 }
 
-.hero .hero-text h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
+/* =========================
+   メイン
+========================= */
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
 }
 
-/* =========================================================
-   セクションの見出し
-   ========================================================= */
-.section-title {
-  text-align: center;
-  color: var(--color-green-dark);
-  font-size: 1.8rem;
-  margin: 56px 0 12px;
+.section-title{
+  text-align:center;
+  font-size:2rem;
+  color:#2f5d25;
+  margin-bottom:10px;
 }
 
-.section-title::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 4px;
-  background: var(--color-accent);
-  border-radius: 2px;
-  margin: 12px auto 0;
+.lead{
+  text-align:center;
+  margin-bottom:40px;
+  color:#666;
 }
 
-.lead {
-  text-align: center;
-  color: #6b6657;
-  margin-bottom: 32px;
-  font-size: 1rem;
+/* =========================
+   カード
+========================= */
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
-/* =========================================================
-   トップページの商品カード（クリックで各ページへ）
-   ========================================================= */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 少し横幅を広く調整 */
-  gap: 28px; /* スッキリ見えるよう隙間を広げました */
-  margin: 24px 0 80px;
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  transition:0.3s;
+  border:4px solid #dfe8cc;
 }
 
-.card {
-  background: var(--color-card);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  color: var(--color-ink);
-  transition: var(--transition);
-  display: block;
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.18);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(63, 97, 40, 0.18);
+.card img{
+  height:220px;
+  object-fit:cover;
 }
 
-.card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
+.card-body{
+  padding:20px;
 }
 
-.card .card-body {
-  padding: 20px; /* 余白を均等にして綺麗に */
+.tag{
+  display:inline-block;
+  background:#6aa84f;
+  color:white;
+  padding:5px 12px;
+  border-radius:999px;
+  font-size:0.9rem;
+  margin-bottom:12px;
 }
 
-.card .card-body h3 {
-  color: var(--color-green-dark);
-  font-size: 1.25rem;
-  margin-top: 4px;
+.card h3{
+  color:#2f5d25;
+  margin-bottom:10px;
+  font-size:1.5rem;
 }
 
-.card .card-body p {
-  font-size: 0.92rem;
-  color: #6b6657;
-  margin-top: 6px;
-  line-height: 1.6;
+.card p{
+  color:#555;
+  margin-bottom:18px;
 }
 
-.card .tag {
-  display: inline-block;
-  background: var(--color-accent);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 3px 12px;
-  border-radius: 999px;
+.button{
+  background:#6aa84f;
+  color:white;
+  text-align:center;
+  padding:10px;
+  border-radius:10px;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-/* =========================================================
-   商品ページ（tomato.html など 1作物のページ）
-   ========================================================= */
-.product {
-  background: var(--color-card);
-  max-width: 760px;
-  margin: 30px auto 40px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.button:hover{
+  background:#4f8d39;
 }
 
-.product .product-photo {
-  width: 100%;
-  height: 400px; /* 写真を少しダイナミックに */
-  object-fit: cover;
+/* =========================
+   農場紹介
+========================= */
+
+.about{
+  margin-top:70px;
+  background:white;
+  border-radius:20px;
+  padding:35px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.product .product-body {
-  padding: 36px 40px 48px; /* ゆったりとした高級感を出す余白 */
+.about h2{
+  color:#2f5d25;
+  margin-bottom:15px;
 }
 
-.product .catch {
-  color: var(--color-accent);
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
+.about p{
+  margin-bottom:15px;
 }
 
-.product h1 {
-  color: var(--color-green-dark);
-  font-size: 2.2rem;
-  margin: 6px 0 24px;
+/* =========================
+   直売情報
+========================= */
+
+.info{
+  margin-top:40px;
+  background:#eef6e4;
+  border-radius:20px;
+  padding:35px;
 }
 
-/* 「だれに / おすすめの食べ方」などの小見出し */
-.product h2 {
-  color: var(--color-green-dark); /* 読みやすさのために少し濃く */
-  font-size: 1.3rem;
-  border-left: 6px solid var(--color-accent);
-  padding-left: 14px;
-  margin: 36px 0 14px;
+.info h2{
+  color:#2f5d25;
+  margin-bottom:15px;
 }
 
-/* 商品ページ内で箇条書き（ul, li）を使った場合のスタイルを追加 */
-.product-body ul, .product-body ol {
-  padding-left: 22px;
-  margin: 14px 0;
-}
-.product-body li {
-  margin-bottom: 8px;
+.info ul{
+  list-style:none;
 }
 
-/* 戻るボタン */
-.back-link {
-  display: inline-block;
-  margin: 10px 0 40px 24px;
-  color: var(--color-green-dark);
-  text-decoration: none;
-  font-weight: 700;
+.info li{
+  margin-bottom:10px;
+  font-size:1.1rem;
 }
 
-.back-link:hover {
-  color: var(--color-green);
-  transform: translateX(-4px); /* マウスを乗せると左に少し引っ込む可愛い動き */
+/* =========================
+   フッター
+========================= */
+
+.site-footer{
+  background:#2f5d25;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:60px;
 }
 
-/* =========================================================
-   フッター（全ページ共通の下の帯）
-   ========================================================= */
-.site-footer {
-  background: var(--color-green-dark);
-  color: #fff;
-  text-align: center;
-  padding: 32px 24px; /* 少し縦を広げて落ち着きを */
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-}
+/* =========================
+   スマホ対応
+========================= */
 
-/* =========================================================
-   スマホ向けの調整（レスポンシブ）
-   ========================================================= */
-@media (max-width: 600px) {
-  .hero { margin: 16px auto; }
-  .hero img { height: 240px; }
-  .hero .hero-text { left: 20px; bottom: 20px; }
-  .hero .hero-text h1 { font-size: 1.5rem; }
-  
-  .section-title { font-size: 1.5rem; margin-top: 40px; }
-  
-  .product .product-photo { height: 260px; }
-  .product .product-body { padding: 24px 20px; }
-  .product h1 { font-size: 1.7rem; }
-  
-  .card-grid { gap: 20px; padding: 0 4px; }
+@media(max-width:768px){
+
+  .hero{
+    height:320px;
+  }
+
+  .hero-text h1{
+    font-size:2rem;
+  }
+
+  .hero-text p{
+    font-size:1rem;
+  }
+
 }
