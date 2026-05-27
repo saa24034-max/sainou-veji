@@ -9,15 +9,15 @@
 
 /* ▼ テーマカラー（ここを変えると全ページの色が一気に変わる）✏️ */
 :root {
-  --color-bg:         #fbf7ee;  /* 背景（クリーム色） */
-  --color-green:      #5c8a3a;  /* メインの緑（葉っぱ） */
-  --color-green-dark: #3f6128;  /* 濃い緑（見出しなど） */
-  --color-accent:     #e5623d;  /* アクセント（トマト色） */
-  --color-ink:        #33302a;  /* 文字の色 */
+  --color-bg:         #fffbf0;  /* 背景（たまご色・カスタードクリーム） */
+  --color-green:      #60993e;  /* メイン（森の木々のような緑） */
+  --color-green-dark: #31572c;  /* 濃い緑（深緑） */
+  --color-accent:     #e85d04;  /* アクセント（完熟トマト・完熟かぼちゃ） */
+  --color-ink:        #3d342a;  /* 文字の色（ビターチョコのような焦げ茶） */
   --color-card:       #ffffff;  /* カードの背景（白） */
-  --radius:           18px;     /* 角の丸み */
-  --shadow:           0 10px 30px rgba(63, 97, 40, 0.08); /* 影（少し柔らかくしました） */
-  --transition:       all 0.3s ease; /* アニメーション用の一貫した設定 */
+  --radius:           24px;     /* 角の丸みを大きくしてさらに可愛く */
+  --shadow:           0 10px 30px rgba(49, 87, 44, 0.06); /* 影 */
+  --transition:       all 0.3s ease;
 }
 
 /* ▼ 全体設定（Google Fonts の Zen Maru Gothic を使用） */
