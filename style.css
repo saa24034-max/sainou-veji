@@ -1,3 +1,11 @@
+なるほど、CSSのファイルがさらに「授業の教材用」のように分かりやすく整理されたものになっていたのですね！コメント欄（👤 担当：デザイン担当さん）や、:root（テーマカラー）を使った管理がとてもスマートです。
+
+このファイル（Zen Maru Gothic のフォント設定や、背景の可愛いドット模様など）の良いところをすべて活かしつつ、さらに見栄えが良くなるように「後半のカード部分、学校紹介、お知らせ、フッター、スマホ対応」までをすべて書き足した【完全版】を作成しました！
+
+これを丸ごとコピーして、あなたの style.css に上書きしてください。
+
+新しい style.css（完全版）
+CSS
 /* =========================================================
    style.css  ―― サイト全体の見た目を決めるファイル
    👤 担当：デザイン担当（　　　　　　　　）さん
@@ -45,8 +53,16 @@ img {
 }
 
 a {
-  color: var(--color-green-dark);
+  text-decoration: none;
+  color: inherit;
   transition: var(--transition);
+}
+
+/* 中身を中央にそろえる共通の箱 */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px; /* スマホでの端の余白を少し確保 */
 }
 
 /* =========================================================
@@ -69,13 +85,6 @@ a {
   font-size: 0.9rem;
   opacity: 0.85;
   margin-top: 4px;
-}
-
-/* 中身を中央にそろえる共通の箱 */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px; /* スマホでの端の余白を少し確保 */
 }
 
 /* =========================================================
@@ -122,10 +131,234 @@ a {
   font-weight: 700;
 }
 
+.hero .hero-text p {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  opacity: 0.95;
+}
+
 /* =========================================================
-   セクションの見出し
+   セクションの見出し・導入文
    ========================================================= */
 .section-title {
   text-align: center;
   color: var(--color-green-dark);
   font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lead {
+  text-align: center;
+  color: var(--color-ink);
+  opacity: 0.8;
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   農産物のカードグリッド（ここから新しく追加）
+   ========================================================= */
+.products-section {
+  margin-bottom: 60px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--color-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* マウスを乗せたらフワッと浮き上がって、画像が少し大きくなる */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(49, 87, 44, 0.12);
+}
+
+.card-img-wrapper {
+  height: 200px;
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.3rem;
+  color: var(--color-green-dark);
+  margin: 8px 0;
+  font-weight: 700;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  opacity: 0.9;
+  flex-grow: 1;
+}
+
+/* タグ（人気商品・朝採れ・数量限定） */
+.tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  color: #fff;
+  background-color: var(--color-green);
+}
+
+/* 特定のタグの色を変えたい場合の設定 */
+.tag-popular { background-color: var(--color-accent); }
+.tag-fresh { background-color: #2a9d8f; }
+.tag-limited { background-color: #e9c46a; color: #3d342a; }
+
+/* =========================================================
+   学校紹介セクション
+   ========================================================= */
+.about-section {
+  background-color: var(--color-card);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 60px;
+  border: 2px solid rgba(96, 153, 62, 0.15); /* うっすら緑の枠線 */
+}
+
+.about-content p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   お知らせセクション
+   ========================================================= */
+.news-section {
+  margin-bottom: 80px;
+}
+
+.news-list {
+  list-style: none;
+  background-color: var(--color-card);
+  border-radius: var(--radius);
+  padding: 8px 24px;
+  box-shadow: var(--shadow);
+}
+
+.news-list li {
+  padding: 16px 0;
+  border-bottom: 1px dashed rgba(92,138,58,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  font-weight: 700;
+  color: var(--color-green);
+  margin-right: 24px;
+  min-width: 100px;
+}
+
+/* =========================================================
+   フッター（一番下の帯）
+   ========================================================= */
+.site-footer {
+  background-color: var(--color-green-dark);
+  color: #fff;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================================
+   スマートフォン用の表示調整（レスポンシブ）
+   ========================================================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .hero {
+    margin: 16px;
+    border-radius: 16px;
+  }
+  
+  .hero img {
+    height: 240px; /* スマホでは写真を少し低く */
+  }
+  
+  .hero .hero-text {
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  .hero .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+
+  .about-section {
+    padding: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .news-list {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .news-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
