@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>完熟ポテト - 西条農業高校 直売所</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header class="site-header">
+    <div class="container">
+      <div class="farm-name">🌱 西条農業高校 直売所</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about-section" style="margin-top: 40px;">
+      <h2 class="section-title">🥔 完熟ポテト（じゃがいも）</h2>
+      
+      <div style="margin: 24px 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+        <img src="images/potato.jpg" alt="完熟ポテト" style="width: 100%; height: 350px; object-fit: cover;">
+      </div>
+
+      <div class="about-content">
+        <p><strong>【生徒たちからのこだわりポイント】</strong></p>
+        <p>
+          西条の豊かな土壌を活かし、有機肥料をたっぷり使って育てた自慢のじゃがいも（男爵）です。
+          じっくり土の中で完熟させてから収穫しているため、通常のじゃがいもよりも甘みが強く、ホクホクした食感が楽しめます。
+        </p>
+        
+        <p style="margin-top: 24px;"><strong>おすすめの食べ方：</strong></p>
+        <p>シンプルな「じゃがバター」や、ホクホク感を活かした「コロッケ」「ポテトサラダ」にすると最高においしいです！</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" style="display: inline-block; background-color: var(--color-green); color: white; padding: 12px 32px; border-radius: 50px; font-weight: bold;">
+          ← 直売所トップへ戻る
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 西条農業高校 農業クラブ
+  </footer>
+
+</body>
+</html>
