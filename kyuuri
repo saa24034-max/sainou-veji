@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>シャキシャキきゅうり</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="farm-name">🌱 西条農業高校 直売所</div>
+    <div class="farm-sub">
+      生徒たちが心をこめて育てました
+    </div>
+  </header>
+
+  <!-- 作物紹介 -->
+  <main class="container">
+
+    <section class="about">
+
+      <img src="images/cucumber.jpg"
+           alt="きゅうり"
+           style="width:100%; border-radius:20px; margin-bottom:20px;">
+
+      <span class="tag">朝採れ</span>
+
+      <h1 style="color:#31572c; margin:15px 0;">
+        シャキシャキきゅうり
+      </h1>
+
+      <p>
+        私たちが愛情をこめて育てたきゅうりです。
+        朝に収穫した新鮮なものを販売しています。
+      </p>
+
+      <br>
+
+      <h2>🥒 特徴</h2>
+
+      <ul>
+        <li>みずみずしい</li>
+        <li>シャキシャキ食感</li>
+        <li>サラダにおすすめ</li>
+        <li>暑い季節にぴったり</li>
+      </ul>
+
+      <br>
+
+      <h2>📋 栽培について</h2>
+
+      <p>
+        種まきから収穫まで、生徒たちが協力して管理しています。
+        水やりや病害虫の防除を行い、
+        安全でおいしいきゅうりづくりを目指しています。
+      </p>
+
+      <br>
+
+      <h2>💰 販売価格</h2>
+
+      <p>
+        1本 50円
+      </p>
+
+      <br>
+
+      <a href="index.html" class="button">
+        ← トップページへ戻る
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    © 2026 ○○農業高校
+  </footer>
+
+</body>
+</html>
