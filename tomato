@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>あま〜いトマト | ○○農業高校直売所</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="farm-name">🌱 ○○農業高校 直売所</div>
+    <div class="farm-sub">
+      私たちが育てた新鮮な作物をお届けします
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="product">
+
+      <!-- 写真 -->
+      <img src="images/tomato.jpg" alt="トマト">
+
+      <!-- タグ -->
+      <span class="tag">完熟</span>
+
+      <!-- タイトル -->
+      <h1>🍅 あま〜いトマト</h1>
+
+      <p class="intro">
+        太陽の光をたっぷり浴びて育った、
+        甘くてジューシーなトマトです。
+      </p>
+
+      <!-- 特徴 -->
+      <h2>🍅 特徴</h2>
+
+      <ul>
+        <li>甘みが強い</li>
+        <li>みずみずしい</li>
+        <li>そのまま食べてもおいしい</li>
+        <li>サラダにもぴったり</li>
+      </ul>
+
+      <!-- 栽培 -->
+      <h2>🌱 栽培について</h2>
+
+      <p>
+        生徒たちが種まきから収穫まで
+        愛情を込めて育てました。
+      </p>
+
+      <p>
+        毎日の水やりや管理を行い、
+        おいしいトマトになるよう
+        丁寧に育てています。
+      </p>
+
+      <!-- おすすめの食べ方 -->
+      <h2>🥗 おすすめの食べ方</h2>
+
+      <ul>
+        <li>そのまま丸かじり</li>
+        <li>サラダ</li>
+        <li>カプレーゼ</li>
+        <li>トマトソース</li>
+      </ul>
+
+      <!-- 販売情報 -->
+      <h2>🧺 販売情報</h2>
+
+      <p><strong>販売価格：</strong>1袋 200円</p>
+
+      <p><strong>販売場所：</strong>○○農業高校直売所</p>
+
+      <p><strong>販売日：</strong>毎週 水曜日・金曜日</p>
+
+      <!-- 担当生徒コメント -->
+      <h2>👨‍🌾 担当生徒からひとこと</h2>
+
+      <p>
+        甘くておいしいトマトになるよう、
+        毎日心を込めて育てました。
+        ぜひ食べてみてください！
+      </p>
+
+      <!-- 戻るボタン -->
+      <a href="index.html" class="back-btn">
+        ← トップページへ戻る
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    © 2026 ○○農業高校 ／ 農業情報活用の授業で作りました
+  </footer>
+
+</body>
+</html>
