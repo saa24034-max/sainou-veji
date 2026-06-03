@@ -1,207 +1,131 @@
+/* =========================================================
+   style.css  ―― サイト全体の見た目を決めるファイル
+   👤 担当：デザイン担当（　　　　　　　　）さん
+
+   このファイルを編集すると、サイト全体の色や形が変わります。
+   まずは下の「テーマカラー」の色コードを変えてみよう。
+   色コードは #RRGGBB の形。https://www.color-sample.com/ などで探せます。
+   ========================================================= */
+
+/* ▼ テーマカラー（ここを変えると全ページの色が一気に変わる）✏️ */
+:root {
+  --color-bg:         #fffbf0;  /* 背景（たまご色・カスタードクリーム） */
+  --color-green:      #60993e;  /* メイン（森の木々のような緑） */
+  --color-green-dark: #31572c;  /* 濃い緑（深緑） */
+  --color-accent:     #e85d04;  /* アクセント（完熟トマト・完熟かぼちゃ） */
+  --color-ink:        #3d342a;  /* 文字の色（ビターチョコのような焦げ茶） */
+  --color-card:       #ffffff;  /* カードの背景（白） */
+  --radius:           24px;     /* 角の丸みを大きくしてさらに可愛く */
+  --shadow:           0 10px 30px rgba(49, 87, 44, 0.06); /* 影 */
+  --transition:       all 0.3s ease;
+}
+
+/* ▼ 全体設定（Google Fonts の Zen Maru Gothic を使用） */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  color: #333;
-  background-color: #fcfbf7; /* 温かみのあるクリーム色 */
-  line-height: 1.6;
+  font-family: "Zen Maru Gothic", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.8;
+  /* 背景のドット模様 */
+  background-image: radial-gradient(rgba(92,138,58,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased; /* 文字をクッキリ滑らかに */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  color: var(--color-green-dark);
+  transition: var(--transition);
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* ヘッダー */
+/* =========================================================
+   ヘッダー（全ページ共通の上の帯）
+   ========================================================= */
 .site-header {
-  background-color: #4caf50; /* 農業をイメージした緑 */
-  color: white;
-  padding: 20px 0;
+  background-color: var(--color-green);
+  color: #fff;
+  padding: 24px; /* 上下を少し広げてゆったりと */
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.farm-name {
-  font-size: 1.8rem;
-  font-weight: bold;
+.site-header .farm-name {
+  font-size: 1.6rem; /* 少し大きく */
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
-.farm-sub {
+.site-header .farm-sub {
   font-size: 0.9rem;
-  margin-top: 5px;
-  opacity: 0.9;
+  opacity: 0.85;
+  margin-top: 4px;
 }
 
-/* メインビジュアル */
+/* 中身を中央にそろえる共通の箱 */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px; /* スマホでの端の余白を少し確保 */
+}
+
+/* =========================================================
+   トップページの「ヒーロー」（一番上の大きな写真）
+   ========================================================= */
 .hero {
   position: relative;
-  height: 350px;
+  margin: 32px auto;
+  max-width: 960px;
+  border-radius: var(--radius);
   overflow: hidden;
-  background-color: #e0e0e0; /* 画像がない時の背景色 */
+  box-shadow: var(--shadow);
 }
 
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-text {
+/* 画像の上にうっすら暗いグラデーションを重ねて文字を読みやすくする */
+.hero::after {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-  width: 90%;
-}
-
-.hero-text h1 {
-  font-size: 2.3rem;
-  margin-bottom: 10px;
-}
-
-/* 見出しの共通デザイン */
-.section-title {
-  font-size: 1.6rem;
-  color: #2e7d32;
-  border-bottom: 3px solid #81c784;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-}
-
-.lead {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #666;
-}
-
-/* 商品カードのグリッド */
-.products-section {
-  margin-bottom: 60px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-.card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.card-img-wrapper {
-  height: 200px;
-  background-color: #f0f0f0; /* 画像がない時の背景色 */
-  overflow: hidden;
-}
-
-.card-img-wrapper img {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.hero img {
+  width: 100%;
+  height: 360px; /* 少し高くしてダイナミックに */
   object-fit: cover;
 }
 
-.card-body {
-  padding: 20px;
-}
-
-.card-body h3 {
-  margin: 10px 0;
-  font-size: 1.3rem;
-}
-
-.card-body p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* タグの装飾 */
-.tag {
-  display: inline-block;
-  padding: 3px 8px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  border-radius: 4px;
-  color: white;
-}
-.tag-popular { background-color: #e53935; }
-.tag-fresh { background-color: #00acc1; }
-.tag-limited { background-color: #ffb300; }
-
-/* 学校紹介 */
-.about-section {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  margin-bottom: 60px;
-}
-
-.about-content p {
-  margin-bottom: 15px;
-}
-.about-content p:last-child {
-  margin-bottom: 0;
-}
-
-/* お知らせ */
-.news-section {
-  margin-bottom: 40px;
-}
-
-.news-list {
-  list-style: none;
-}
-
-.news-list li {
-  padding: 12px 0;
-  border-bottom: 1px dashed #ccc;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.news-date {
-  font-weight: bold;
-  color: #666;
-  margin-right: 20px;
-  min-width: 90px;
-}
-
-/* フッター */
-.site-footer {
-  background-color: #333;
+.hero .hero-text {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
   color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  margin-top: 60px;
+  z-index: 1; /* グラデーションより手前に */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* スマホ用の調整 */
-@media (max-width: 600px) {
-  .hero-text h1 { font-size: 1.6rem; }
-  .hero { height: 250px; }
-  .farm-name { font-size: 1.4rem; }
+.hero .hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
 }
+
+/* =========================================================
+   セクションの見出し
+   ========================================================= */
+.section-title {
+  text-align: center;
+  color: var(--color-green-dark);
+  font-size: 1.8rem;
