@@ -1,348 +1,99 @@
-# 西条農業高校 直売所サイト（農業感アップ版）
-
-```html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>西条農業高校 直売所</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* =========================
-       全体設定
-    ========================= */
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family: 'Zen Maru Gothic', sans-serif;
-      background:#f5f2e8;
-      color:#333;
-      line-height:1.7;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    /* =========================
-       ヘッダー
-    ========================= */
-
-    .site-header{
-      background:linear-gradient(90deg,#3d7a2f,#6aa84f);
-      color:white;
-      text-align:center;
-      padding:20px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .farm-name{
-      font-size:2rem;
-      font-weight:700;
-    }
-
-    .farm-sub{
-      margin-top:8px;
-      font-size:1rem;
-    }
-
-    /* =========================
-       ヒーロー画像
-    ========================= */
-
-    .hero{
-      position:relative;
-      height:420px;
-      overflow:hidden;
-    }
-
-    .hero img{
-      height:100%;
-      object-fit:cover;
-      filter:brightness(70%);
-    }
-
-    .hero-text{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      text-align:center;
-      color:white;
-      width:90%;
-    }
-
-    .hero-text h1{
-      font-size:3rem;
-      margin-bottom:15px;
-      text-shadow:2px 2px 8px rgba(0,0,0,0.5);
-    }
-
-    .hero-text p{
-      font-size:1.2rem;
-      background:rgba(0,0,0,0.4);
-      display:inline-block;
-      padding:10px 20px;
-      border-radius:999px;
-    }
-
-    /* =========================
-       メイン
-    ========================= */
-
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding:50px 20px;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:2rem;
-      color:#2f5d25;
-      margin-bottom:10px;
-    }
-
-    .lead{
-      text-align:center;
-      margin-bottom:40px;
-      color:#666;
-    }
-
-    /* =========================
-       カード
-    ========================= */
-
-    .card-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      background:white;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-      transition:0.3s;
-      border:4px solid #dfe8cc;
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 8px 18px rgba(0,0,0,0.18);
-    }
-
-    .card img{
-      height:220px;
-      object-fit:cover;
-    }
-
-    .card-body{
-      padding:20px;
-    }
-
-    .tag{
-      display:inline-block;
-      background:#6aa84f;
-      color:white;
-      padding:5px 12px;
-      border-radius:999px;
-      font-size:0.9rem;
-      margin-bottom:12px;
-    }
-
-    .card h3{
-      color:#2f5d25;
-      margin-bottom:10px;
-      font-size:1.5rem;
-    }
-
-    .card p{
-      color:#555;
-    }
-
-    /* =========================
-       農場紹介
-    ========================= */
-
-    .about{
-      margin-top:70px;
-      background:white;
-      border-radius:20px;
-      padding:35px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .about h2{
-      color:#2f5d25;
-      margin-bottom:15px;
-    }
-
-    /* =========================
-       フッター
-    ========================= */
-
-    .site-footer{
-      background:#2f5d25;
-      color:white;
-      text-align:center;
-      padding:20px;
-      margin-top:60px;
-    }
-
-    /* =========================
-       スマホ
-    ========================= */
-
-    @media(max-width:768px){
-
-      .hero{
-        height:320px;
-      }
-
-      .hero-text h1{
-        font-size:2rem;
-      }
-
-      .hero-text p{
-        font-size:1rem;
-      }
-
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <!-- =========================
-       ヘッダー
-  ========================= -->
-
-  <header class="site-header">
-    <div class="farm-name">🌱 西条農業高校 直売所</div>
-    <div class="farm-sub">生徒たちが心をこめて育てました</div>
-  </header>
-
-  <!-- =========================
-       ヒーロー画像
-  ========================= -->
-
-  <section class="hero">
-    <img src="images/hero.jpg" alt="学校農場">
-
-    <div class="hero-text">
-      <h1>畑から、みんなの食卓へ。</h1>
-      <p>安心・新鮮・まごころ野菜</p>
-    </div>
-  </section>
-
-  <!-- =========================
-       作物一覧
-  ========================= -->
-
-  <main class="container">
-
-    <h2 class="section-title">🥕 今日のおすすめ</h2>
-    <p class="lead">クリックすると詳しい紹介ページが見られます</p>
-
-    <div class="card-grid">
-
-      <!-- トマト -->
-      <a class="card" href="tomato.html">
-        <img src="images/tomato.jpg" alt="トマト">
-
-        <div class="card-body">
-          <span class="tag">人気No.1</span>
-          <h3>あま〜い完熟トマト</h3>
-          <p>
-            太陽をたっぷり浴びて育ちました。
-            サラダにもおすすめです！
-          </p>
-        </div>
-      </a>
-
-      <!-- きゅうり -->
-      <a class="card" href="cucumber.html">
-        <img src="images/cucumber.jpg" alt="きゅうり">
-
-        <div class="card-body">
-          <span class="tag">朝採れ</span>
-          <h3>シャキシャキきゅうり</h3>
-          <p>
-            みずみずしくて食感抜群！
-            夏にぴったりです。
-          </p>
-        </div>
-      </a>
-
-      <!-- いちご -->
-      <a class="card" href="strawberry.html">
-        <img src="images/strawberry.jpg" alt="いちご">
-
-        <div class="card-body">
-          <span class="tag">数量限定</span>
-          <h3>あかいちご</h3>
-          <p>
-            甘みたっぷり！
-            生徒人気も高い作物です。
-          </p>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- =========================
-         農場紹介
-    ========================= -->
-
-    <section class="about">
-      <h2>🌾 わたしたちの農場について</h2>
-
-      <p>
-        西条農業高校では、野菜や果物を生徒たちが一から育てています。
-        種まき、水やり、収穫まで、毎日協力して管理しています。
-      </p>
-
-      <br>
-
-      <p>
-        地域のみなさんに「おいしい！」と言ってもらえるよう、
-        安心・安全な作物づくりを目指しています。
-      </p>
-    </section>
-
-  </main>
-
-  <!-- =========================
-       フッター
-  ========================= -->
-
-  <footer class="site-footer">
-    © 2026 西条農業高校
-  </footer>
-
-</body>
-</html>
+<header class="site-header">
+  <div class="farm-name">🌱 西条農業高校 直売所</div>
+  <div class="farm-sub">生徒たちが育てた新鮮な農産物をお届けします</div>
+</header>
+
+<section class="hero">
+  <img src="images/hero.jpg" alt="学校農場">
+
+  <div class="hero-text">
+    <h1>地域と育てる、未来の農業。</h1>
+    <p>西条の自然と生徒の努力が育んだ作物たち</p>
+  </div>
+</section>
+
+<main class="container">
+
+  <h2 class="section-title">🌾 生徒おすすめの農産物</h2>
+  <p class="lead">
+    私たちが心を込めて育てた作物を紹介します
+  </p>
+
+  <div class="card-grid">
+
+```
+<a class="card" href="tomato.html">
+  <img src="images/tomato.jpg" alt="トマト">
+  <div class="card-body">
+    <span class="tag">人気商品</span>
+    <h3>完熟トマト</h3>
+    <p>
+      甘みと酸味のバランスが良く、
+      みずみずしさが自慢です。
+    </p>
+  </div>
+</a>
+
+<a class="card" href="cucumber.html">
+  <img src="images/cucumber.jpg" alt="きゅうり">
+  <div class="card-body">
+    <span class="tag">朝採れ</span>
+    <h3>きゅうり</h3>
+    <p>
+      シャキシャキ食感で、
+      サラダにもぴったりです。
+    </p>
+  </div>
+</a>
+
+<a class="card" href="strawberry.html">
+  <img src="images/strawberry.jpg" alt="いちご">
+  <div class="card-body">
+    <span class="tag">数量限定</span>
+    <h3>いちご</h3>
+    <p>
+      甘くて香り豊かな、
+      生徒自慢のいちごです。
+    </p>
+  </div>
+</a>
 ```
 
----
+  </div>
 
+  <section class="about">
+    <h2>🏫 西条農業高校について</h2>
+
+```
+<p>
+  私たちは授業や実習を通して、
+  野菜や果物の栽培技術を学んでいます。
+</p>
+
+<br>
+
+<p>
+  種まきから収穫まで責任を持って管理し、
+  地域の皆さまに安心して食べていただける
+  農産物づくりに取り組んでいます。
+</p>
+```
+
+  </section>
+
+  <section class="about">
+    <h2>📢 お知らせ</h2>
+
+```
+<p>2026.06.01　夏野菜の販売を開始しました。</p>
+<p>2026.05.20　校内収穫祭を実施しました。</p>
+<p>2026.04.10　今年度の栽培がスタートしました。</p>
+```
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  © 2026 西条農業高校 農業クラブ
+</footer>
