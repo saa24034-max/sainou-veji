@@ -1,99 +1,214 @@
-<header class="site-header">
-  <div class="farm-name">🌱 西条農業高校 直売所</div>
-  <div class="farm-sub">生徒たちが育てた新鮮な農産物をお届けします</div>
-</header>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西条農業高校 直売所</title>
 
-<section class="hero">
-  <img src="images/hero.jpg" alt="学校農場">
+  <link rel="stylesheet" href="style.css">
 
-  <div class="hero-text">
-    <h1>地域と育てる、未来の農業。</h1>
-    <p>西条の自然と生徒の努力が育んだ作物たち</p>
-  </div>
-</section>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
 
-<main class="container">
+<body>
 
-  <h2 class="section-title">🌾 生徒おすすめの農産物</h2>
-  <p class="lead">
-    私たちが心を込めて育てた作物を紹介します
-  </p>
+  <!-- ヘッダー -->
+  <header class="site-header">
 
-  <div class="card-grid">
+    <div class="farm-name">
+      🌱 西条農業高等学校 直売所
+    </div>
 
-```
-<a class="card" href="tomato.html">
-  <img src="https://cdn.britannica.com/16/187216-050-CB57A09B/tomatoes-tomato-plant-Fruit-vegetable.jpg?w=300" alt="トマト">
-  <div class="card-body">
-    <span class="tag">人気商品</span>
-    <h3>完熟トマト</h3>
-    <p>
-      甘みと酸味のバランスが良く、
-      みずみずしさが自慢です。
-    </p>
-  </div>
-</a>
+    <div class="farm-sub">
+      私たちが育てた新鮮な作物をお届けします
+    </div>
 
-<a class="card" href="cucumber.html">
-  <img src="images/cucumber.jpg" alt="きゅうり">
-  <div class="card-body">
-    <span class="tag">朝採れ</span>
-    <h3>きゅうり</h3>
-    <p>
-      シャキシャキ食感で、
-      サラダにもぴったりです。
-    </p>
-  </div>
-</a>
+  </header>
 
-<a class="card" href="strawberry.html">
-  <img src="images/strawberry.jpg" alt="いちご">
-  <div class="card-body">
-    <span class="tag">数量限定</span>
-    <h3>いちご</h3>
-    <p>
-      甘くて香り豊かな、
-      生徒自慢のいちごです。
-    </p>
-  </div>
-</a>
-```
+  <!-- ヒーロー画像 -->
+  <section class="hero">
 
-  </div>
+    <img src="images/hero.jpg" alt="西条農業高校の農場">
 
-  <section class="about">
-    <h2>🏫 西条農業高校について</h2>
+    <div class="hero-text">
+      <h1>畑から、まっすぐ。</h1>
 
-```
-<p>
-  私たちは授業や実習を通して、
-  野菜や果物の栽培技術を学んでいます。
-</p>
-
-<br>
-
-<p>
-  種まきから収穫まで責任を持って管理し、
-  地域の皆さまに安心して食べていただける
-  農産物づくりに取り組んでいます。
-</p>
-```
+      <p>
+        自然の恵みをいっぱい受けて、
+        愛情こめて育てました。
+      </p>
+    </div>
 
   </section>
 
-  <section class="about">
-    <h2>📢 お知らせ</h2>
+  <!-- メイン -->
+  <main class="container">
 
-```
-<p>2026.06.01　夏野菜の販売を開始しました。</p>
-<p>2026.05.20　校内収穫祭を実施しました。</p>
-<p>2026.04.10　今年度の栽培がスタートしました。</p>
-```
+    <h2 class="section-title">🥕 今日のおすすめ</h2>
 
-  </section>
+    <p class="lead">
+      私たちが心を込めて育てた自慢の作物です
+    </p>
 
-</main>
+    <div class="card-grid">
 
-<footer class="site-footer">
-  © 2026 西条農業高校 農業クラブ
-</footer>
+      <!-- トマト -->
+      <a class="card" href="tomato.html">
+
+        <img src="images/tomato.jpg" alt="トマト">
+
+        <div class="card-body">
+
+          <span class="tag">完熟</span>
+
+          <h3>あま〜いトマト</h3>
+
+          <p>
+            朝採れの完熟トマト。
+            甘くてジューシーです。
+          </p>
+
+        </div>
+
+      </a>
+
+      <!-- きゅうり -->
+      <a class="card" href="cucumber.html">
+
+        <img src="images/cucumber.jpg" alt="きゅうり">
+
+        <div class="card-body">
+
+          <span class="tag">新鮮</span>
+
+          <h3>シャキシャキきゅうり</h3>
+
+          <p>
+            みずみずしくてサラダにぴったり。
+          </p>
+
+        </div>
+
+      </a>
+
+      <!-- なす -->
+      <a class="card" href="eggplant.html">
+
+        <img src="images/eggplant.jpg" alt="なす">
+
+        <div class="card-body">
+
+          <span class="tag">とれたて</span>
+
+          <h3>なす</h3>
+
+          <p>
+            焼いても煮てもおいしい夏野菜です。
+          </p>
+
+        </div>
+
+      </a>
+
+      <!-- ピーマン -->
+      <a class="card" href="pepper.html">
+
+        <img src="images/pepper.jpg" alt="ピーマン">
+
+        <div class="card-body">
+
+          <span class="tag">肉厚</span>
+
+          <h3>ピーマン</h3>
+
+          <p>
+            苦みが少なく食べやすいです。
+          </p>
+
+        </div>
+
+      </a>
+
+      <!-- じゃがいも -->
+      <a class="card" href="potato.html">
+
+        <img src="images/potato.jpg" alt="じゃがいも">
+
+        <div class="card-body">
+
+          <span class="tag">ほくほく</span>
+
+          <h3>じゃがいも</h3>
+
+          <p>
+            カレーや肉じゃがにおすすめです。
+          </p>
+
+        </div>
+
+      </a>
+
+      <!-- いちご -->
+      <a class="card" href="strawberry.html">
+
+        <img src="images/strawberry.jpg" alt="いちご">
+
+        <div class="card-body">
+
+          <span class="tag">人気</span>
+
+          <h3>いちご</h3>
+
+          <p>
+            甘くて香りの良い人気商品です。
+          </p>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <!-- 学校紹介 -->
+    <section class="about">
+
+      <h2>🌾 私たちについて</h2>
+
+      <p>
+        西条農業高等学校では、
+        野菜や果物を生徒たちが授業や実習で育てています。
+      </p>
+
+      <p>
+        地域の皆さまに安心して食べていただけるよう、
+        日々愛情を込めて管理しています。
+      </p>
+
+    </section>
+
+    <!-- 直売情報 -->
+    <section class="info">
+
+      <h2>🧺 直売情報</h2>
+
+      <ul>
+        <li>販売場所：西条農業高校 直売所</li>
+      </ul>
+
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+
+    © 2026 西条農業高等学校
+    <br>
+    農業情報活用の授業で作成
+
+  </footer>
+
+</body>
+</html>
